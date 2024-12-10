@@ -6,6 +6,8 @@ class BlogPostGenerator
 {
     public function generate(string $prompt): string
     {
-        return 'blog post';
+        $aiService = new AiService();
+
+        return $aiService->generateText($prompt);
     }
 }
