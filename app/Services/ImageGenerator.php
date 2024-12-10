@@ -6,6 +6,8 @@ class ImageGenerator
 {
     public function generate(string $prompt): string
     {
-        return 'image';
+        $aiService = new AiService();
+
+        return $aiService->generateImage($prompt);
     }
 }
