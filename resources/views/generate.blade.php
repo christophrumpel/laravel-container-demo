@@ -134,7 +134,7 @@
 <div class="prompt-container">
     <div class="ai-indicator">AI Generated Image Prompt</div>
     <p class="prompt-text">
-        {{ $text ?? 'A beautiful sunset' }}
+        {{ $image ?? 'A beautiful sunset' }}
     </p>
 </div>
 </body>
