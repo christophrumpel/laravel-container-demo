@@ -4,7 +4,7 @@ namespace App\Services;
 
 class BlogPostGenerator
 {
-    public function __construct(private OpenAiService $aiService)
+    public function __construct(private AiServiceInterface $aiService)
     {
     }
 
