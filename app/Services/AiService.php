@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 class AiService
 {
 
-    public function __construct(private Client $client)
+    public function __construct(private Client $client, array $credentials)
     {
     }
 
