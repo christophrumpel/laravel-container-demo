@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\Services\AiService;
+use App\Services\AiServiceInterface;
+use App\Services\ClaudeAiService;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,8 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(AiService::class, function () {
-            return new AiService(new Client(), [config('services.ai.key')]);
+        $this->app->bind(AiServiceInterface::class, function () {
+            return new ClaudeAiService(new Client(), [config('services.ai.key')]);
         });
     }
 

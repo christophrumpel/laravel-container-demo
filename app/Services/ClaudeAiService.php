@@ -4,7 +4,7 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 
-class AiService
+class ClaudeAiService implements AiServiceInterface
 {
 
     public function __construct(private Client $client, array $credentials)
