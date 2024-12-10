@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
-use GuzzleHttp\Client;
-
 class ImageGenerator
 {
+    public function __construct(private AiService $aiService)
+    {
+    }
+
     public function generate(string $prompt): string
     {
-        $aiService = new AiService(new Client());
-
-        return $aiService->generateImage($prompt);
+        return $this->aiService->generateImage($prompt);
     }
 }
