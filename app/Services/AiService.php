@@ -7,11 +7,8 @@ use GuzzleHttp\Client;
 class AiService
 {
 
-    private Client $client;
-
-    public function __construct()
+    public function __construct(private Client $client)
     {
-        $this->client = new Client();
     }
 
     public function generateText(string $prompt): string
