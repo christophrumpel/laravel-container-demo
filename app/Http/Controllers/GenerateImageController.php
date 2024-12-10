@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\AiService;
 use App\Services\ImageGenerator;
-use GuzzleHttp\Client;
 
 class GenerateImageController extends Controller
 {
 
+    public function __construct(private ImageGenerator $imageGenerator)
+    {
+    }
+
     public function __invoke()
     {
-        $imageGenerator = new ImageGenerator(new AiService(new Client()));
-        $image = $imageGenerator->generate('A beautiful sunset!');
+        $image = $this->imageGenerator->generate('A beautiful dog!');
 
         return view('generate', ['image' => $image]);
     }
