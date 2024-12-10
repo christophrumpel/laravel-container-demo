@@ -1,12 +1,10 @@
 <?php
 
 use App\Services\ImageGenerator;
-use App\Services\OpenAiService;
-use GuzzleHttp\Client;
 
 it('generates an image', function () {
     // Arrange
-    $imageGenerator = new ImageGenerator(new OpenAiService(new Client(), ['credentials']));
+    $imageGenerator = resolve(ImageGenerator::class);
 
     // Act
     $image = $imageGenerator->generate('a beautiful sunset');
