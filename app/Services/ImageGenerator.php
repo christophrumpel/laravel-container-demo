@@ -2,14 +2,12 @@
 
 namespace App\Services;
 
+use App\Facades\Ai;
+
 class ImageGenerator
 {
-    public function __construct(private AiServiceInterface $aiService)
-    {
-    }
-
     public function generate(string $prompt): string
     {
-        return $this->aiService->generateImage($prompt);
+        return Ai::generateImage($prompt);
     }
 }

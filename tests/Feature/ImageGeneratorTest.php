@@ -1,11 +1,11 @@
 <?php
 
+use App\Facades\Ai;
 use App\Services\ImageGenerator;
-use Tests\Fakes\FakeAiService;
 
 it('generates an image', function () {
     // Arrange
-    FakeAiService::fake();
+    Ai::fake();
     $imageGenerator = resolve(ImageGenerator::class);
 
     // Act
